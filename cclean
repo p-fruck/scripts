@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# A simple container cleaner (hence cclean) scripts that force deletes all container images etc
+
+set -e
+
+function cmd() {
+	if command -v podman >/dev/null 2>&1; then
+	    podman $@
+	else
+	    docker $@
+	fi
+}
+
+function clean() {
+	echo "Delete all ${1}s"
+	ids=$(cmd $1 ls -q $2)
+	[[ -z $ids ]] || cmd $1 rm -f $ids
+}
+
+clean container -a
+for resource in volume image network
+do
+	clean $resource
+done
