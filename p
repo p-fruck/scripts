@@ -2,7 +2,10 @@
 
 import sys
 import itertools
-from math import sqrt, sin, cos, tan, atan2, pi, e, exp, factorial, log, log10, ceil, floor, comb as binom
+from sympy import sin, cos, pi
+from math import sqrt, tan, atan2, e, exp, factorial, log, log10, ceil, floor, comb as binom
+from base64 import b64encode as b64e, b64decode as b64d
+
 
 fact = factorial
 
