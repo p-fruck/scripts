@@ -37,7 +37,8 @@ for repo in $repos; do
 	tool=$(echo ${repo} | cut -d '/' -f 2)
 	url=$(dl_link ${repo})
 	fullname="$(basename ${url} | sed 's/\.tar\.gz$//')"
-	wget "${url}"
+	echo "Download ${fullname}"
+	wget --quiet "${url}"
 	tar -xzf "${fullname}.tar.gz"
 	mv "$(find ${tool}* -name ${tool})" ..
 done
