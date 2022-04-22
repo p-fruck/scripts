@@ -1,0 +1,4 @@
+#!/bin/sh
+# Delete all untracked files in a git repo
+untracked=$(git ls-files --others --exclude-standard)
+[ -z "${untracked}" ] || rm ${untracked}

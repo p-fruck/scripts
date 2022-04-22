@@ -1,0 +1,14 @@
+#!/bin/sh
+# deletes all local branches in the current git repo except for the selected on
+
+read -p "Are you sure you want to delete all of your local branches? [y/N] " input
+case $input in
+    [yY][eE][sS]|[yY])
+        echo "Cleaning up you branches"
+        git branch -d $(git branch | grep -v '^*')
+        ;;
+    *)
+        echo "Aborting..."
+        exit 1
+        ;;
+esac
