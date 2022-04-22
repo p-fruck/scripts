@@ -20,9 +20,6 @@ if [ ! -d $1 ]; then
 	exit 1
 fi
 
-arch=x86_64
-platform=unknown-linux-gnu
-
 repos="
 dandavison/delta
 zyedidia/micro
