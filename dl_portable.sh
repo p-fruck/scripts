@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # A nice helper script to download a collection of
 # executables from github to a given folder.
 

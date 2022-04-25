@@ -1,0 +1,5 @@
+# files starting with dot are probably config files
+.*
+!.gitignore
+/bin/
+/custom/
