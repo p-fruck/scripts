@@ -16,4 +16,11 @@ def grid_path_num(size: int) -> int:
     """calculates the amount of paths from top left to bottom right in a grid with size*size squares"""
     return binom(2 * (size - 1), size - 1)
 
+def split_blocks(text: bytes, block_size=16) -> list[bytes]:
+    """Splits bytes into blocks with a given block size."""
+    return [ text[i:i+block_size] for i in range(0, len(text), block_size) ]
+
+def split_str(text: str, block_size=16) -> str:
+    return ' '.join(split_blocks(text, block_size))
+
 print(eval(' '.join(sys.argv[1::])))
